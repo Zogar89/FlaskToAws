@@ -1,14 +1,15 @@
 import random
+import os
 from flask import Flask , render_template
 from flaskext.mysql import MySQL
-import os
+
 
 
 application = Flask(__name__)
 
 mysql=MySQL()
 application.config['MYSQL_DATABASE_HOST']='aabknjjcod81j6.cwtsg05na3ro.us-east-1.rds.amazonaws.com'
-application.config['MYSQL_DATABASE_USER']='os.environ['RDS_USERNAME']'
+application.config['MYSQL_DATABASE_USER']=os.environ['RDS_USERNAME']
 application.config['MYSQL_DATABASE_PASSWORD']='asdafgzxcv21421'
 application.config['MYSQL_DATABASE_DB']='FlasktoAWS'
 mysql.init_app(application)
