@@ -10,10 +10,10 @@ load_dotenv()  # take environment variables from .env.
 application = Flask(__name__)
 
 mysql=MySQL()
-application.config['MYSQL_DATABASE_HOST']='aabknjjcod81j6.cwtsg05na3ro.us-east-1.rds.amazonaws.com'
-application.config['MYSQL_DATABASE_USER']='gabriel'
-application.config['MYSQL_DATABASE_PASSWORD']='asdafgzxcv21421'
-application.config['MYSQL_DATABASE_DB']='FlasktoAWS'
+application.config['MYSQL_DATABASE_HOST']=os.environ['RDS_HOSTNAME']
+application.config['MYSQL_DATABASE_USER']=os.environ['RDS_USERNAME']
+application.config['MYSQL_DATABASE_PASSWORD']=os.environ['RDS_PASSWORD']
+application.config['MYSQL_DATABASE_DB']=os.environ['RDS_DB_NAME']
 mysql.init_app(application)
 
 @application.route('/')
