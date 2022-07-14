@@ -12,7 +12,7 @@ application = Flask(__name__)
 mysql=MySQL()
 application.config['MYSQL_DATABASE_HOST']=os.environ['RDS_HOSTNAME']
 application.config['MYSQL_DATABASE_USER']=os.environ['RDS_USERNAME']
-application.config['MYSQL_DATABASE_PASSWORD']='asdafgzxcv21421'
+application.config['MYSQL_DATABASE_PASSWORD']=os.environ['RDS_PASSWORD']
 application.config['MYSQL_DATABASE_DB']='FlasktoAWS'
 mysql.init_app(application)
 
